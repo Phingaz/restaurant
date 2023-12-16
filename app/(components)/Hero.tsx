@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="bg-hero bg-no-repeat relative min-h-[100svh] bg-body flex flex-col md:flex-row items-center gap-10 p-6 lg:p-20 lg:pr-0 pt-[80px] pb-0 -mt-[80px] overflow-x-clip"
+      className="bg-hero bg-no-repeat relative min-h-[100svh] bg-body flex flex-col md:flex-row items-center gap-10 p-6 lg:p-20 lg:pr-0 pt-[150px] lg:pt-[80px] pb-0 -mt-[80px] overflow-x-clip"
     >
       <motion.div
         variants={variants}

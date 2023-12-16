@@ -23,13 +23,13 @@ const Menu = () => {
         </Link>
       </motion.div>
 
-      <ul className="w-full grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-10 gap-y-10 ms:gap-y-20">
+      <ul className="w-full grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 md:gap-x-10 gap-y-5 md:gap-y-20">
         {[1, 1, 1, 1, 1].map((menu: any, i: number) => {
           return (
             <motion.li
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration:0.2 }}
+              transition={{ delay: i * 0.2, duration: 0.2 }}
               key={i}
               className="list-none"
             >
@@ -48,10 +48,10 @@ const Menu = () => {
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h3 className="text-darkGreen text-xl font-poppins leading-6">
+                  <h3 className="text-darkGreen text-sm md:text-xl font-poppins leading-4 font-[600] md:font-[700] md:leading-6">
                     Spicy seasoned seafood noodles
                   </h3>
-                  <p className="font-poppins font-semibold text-orange">
+                  <p className="font-poppins font-semibold text-xs md:text-sm text-orange">
                     $24.00
                   </p>
                 </div>

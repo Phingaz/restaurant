@@ -78,7 +78,7 @@ const Header = () => {
         initial={{ opacity: 0, width: 0 }}
         whileInView={{ opacity: 1, width: "250px" }}
         className={`lg:block ${
-          mobileNav ? " fixed top-0 right-0 bg-darkGreen h-[100svh] " : "hidden"
+          mobileNav ? " fixed top-0 right-0 bg-darkGreen h-[100vh] " : "hidden"
         }`}
       >
         <ul className="flex gap-10 font-[300] flex-col lg:flex-row pt-20 items-center w-full h-full">

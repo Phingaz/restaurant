@@ -74,8 +74,8 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full min-h-[400px] bg-footer  bg-no-repeat relative p-10 lg:p-20 ">
-      <div className="flex w-full justify-between">
+    <footer className="w-full min-h-[400px] bg-footer relative p-10 lg:p-20 ">
+      <div className="flex w-full justify-between flex-col sm:flex-row gap-10">
         <ScrollLink href="#hero">
           <Image
             src="/assets/logo.svg"
