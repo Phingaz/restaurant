@@ -81,9 +81,9 @@ const Header = () => {
           mobileNav ? " fixed top-0 right-0 bg-darkGreen h-[100vh] " : "hidden"
         }`}
       >
-        <ul className="flex gap-10 font-[300] flex-col lg:flex-row pt-20 items-center w-full h-full">
+        <ul className="flex gap-10 font-[300] flex-col lg:flex-row pt-20 lg:pt-0 items-center w-full h-full">
           {links.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} onClick={() => toggleMobileNav()}>
               <ScrollLink href={link.href}>{link.label}</ScrollLink>
             </li>
           ))}

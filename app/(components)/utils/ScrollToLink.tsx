@@ -1,28 +1,35 @@
-// components/ScrollLink.tsx
-import Link, { LinkProps } from "next/link";
-import React, { PropsWithChildren } from "react";
-// mirror the props of next/link component
-type AnchorProps = Omit<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  keyof LinkProps
->;
-type ScrollLinkProps = AnchorProps & LinkProps & PropsWithChildren;
-// component definition
-const ScrollLink = ({ children, ...props }: ScrollLinkProps) => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+import React from "react";
+
+type ScrollLinkProps = {
+  href: string;
+  children: React.ReactNode;
+};
+
+const ScrollLink = ({ children, href }: ScrollLinkProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    //remove everything before the hash
-    const targetId = e.currentTarget.href.replace(/.*\#/, "");
-    const elem = document.getElementById(targetId);
-    window.scrollTo({
-      top: elem?.getBoundingClientRect().top,
-      behavior: "smooth",
-    });
+
+    const targetId = href.replace("#", "");
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const id = targetElement.id;
+      const padding = id === "hero" ? 0 : "reserve" ? 80 : 10;
+      const offsetTop =
+        targetElement.getBoundingClientRect().top + window.scrollY - padding;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
   };
+
   return (
-    <Link {...props} onClick={handleScroll}>
+    <a href={href} onClick={handleClick}>
       {children}
-    </Link>
+    </a>
   );
 };
+
 export default ScrollLink;
