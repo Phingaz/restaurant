@@ -3,9 +3,10 @@ import React from "react";
 type ScrollLinkProps = {
   href: string;
   children: React.ReactNode;
+  className?: string;
 };
 
-const ScrollLink = ({ children, href }: ScrollLinkProps) => {
+const ScrollLink = ({ children, href, className }: ScrollLinkProps) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
@@ -26,7 +27,7 @@ const ScrollLink = ({ children, href }: ScrollLinkProps) => {
   };
 
   return (
-    <a href={href} onClick={handleClick}>
+    <a href={href} onClick={handleClick} className={className}>
       {children}
     </a>
   );
